@@ -4,11 +4,15 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { accountsFetch, accountsBCFetch } from '../actions';
 import ListItem from './ListItem';
+import { get_info } from './../utils/eosjs-client';
 
 
 class ListAccounts extends Component {
     componentWillMount() {
         this.props.accountsFetch();
+        get_info().then(info => {
+            console.log(info);
+          });
     }
 
     renderRow(account) {
