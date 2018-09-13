@@ -9,6 +9,8 @@ import AccountForm from './AccountForm';
 class AddAccount extends Component {
   onButtonPress() {
     const { accountName } = this.props;
+    console.log(accountName);
+    //debugger;
     this.props.accountAdd({ accountName });
   }
 

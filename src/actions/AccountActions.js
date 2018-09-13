@@ -77,7 +77,8 @@ export const accountAdd = ({ accountName }) => {  //passing in {accountName: and
     promise.then(data => {
       //console.log(JSON.stringify(data))
       //dispatch({ type: ACCOUNTS_FETCH_SUCCESS, payload: data.data });
-      if (data.data.account_name) {
+      //debugger;
+      if (data.response.data.account_name) {
         const { currentUser } = firebase.auth();
         firebase.database().ref(`/users/${currentUser.uid}/accounts`)
         .push({ accountName })
