@@ -11,7 +11,7 @@ class AccountForm extends Component {
         <CardSection>
           <Input 
             label="Account name"
-            placeholder="Your EOS account name"
+            placeholder="EOS account name"
             value={this.props.accountName}
             onChangeText={text => this.props.accountUpdate({ prop: 'accountName', value: text })}
             autoCapitalize="none"
