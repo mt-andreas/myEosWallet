@@ -22,7 +22,7 @@ class App extends Component {
 
 
     render() {
-        const store = createStore(reducers, {}, applyMiddleware(thunk));
+        const store = createstore(reducers, {}, applyMiddleware(thunk));
         return (
             <Provider store={store}>
                 <Router />
