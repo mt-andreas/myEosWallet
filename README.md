@@ -32,8 +32,6 @@ Add a line before the `module.exports` line.
 var self = this;
 ```
 
-Now you can try running the project, make sure the good HTTP address is set to your local RPC API Node in `EOS_example.js`.
-
 ```
 react-native run-ios //or - react-native run-android
 ```
