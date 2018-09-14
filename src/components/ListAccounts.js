@@ -35,7 +35,12 @@ const mapStateToProps = (state) => {
    
     const bc = state.blockChainData;
     const accounts = _.map(state.accounts, (val, uid) => {
-        return { ...val, uid,  blockChainData: bc[uid]};
+        console.log('obj', bc, uid,  bc[uid]);
+        if (typeof bc !== "undefined"){
+            console.log('the property is not available...'); // print into console
+            return { ...val, uid,  blockChainData: bc[uid]};
+        }
+        
     });
     //console.log("accounts", accounts);
    

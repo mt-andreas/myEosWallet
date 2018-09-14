@@ -44,11 +44,12 @@ export const accountsFetch = () => {
         getAccountInfo(obj.accountName, uid)
         .then(resp => {
               //debugger;
-              console.log('resp', promise.uid);
+             
               const payload = {
-                uid: uid,
-                data: resp
+                uid: resp.uid,
+                data: resp.data
               }
+              console.log('resp', resp);
               dispatch({ type: GET_ACCOUNT_BC_DATA_SUCCESS, payload });
             });
 

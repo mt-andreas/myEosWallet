@@ -23,8 +23,12 @@ export function get_info(){
 	return net;
 }
 
-export const getAccountInfo = (account, uid) => {
-  let net = get_net();//.getAccount(account);
-  return {data: net.getAccount(account).then(info => {return info;}), uid};
+export const getAccountInfo = async(account, uid) => {
+  let net = await get_net().getAccount(account).then(info => {return info;})
+  /*net.then(info=>{
+    console.log('net', info);
+  });*/
+ 
+  return {data: net, uid};
   //return net;
 }
