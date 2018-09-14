@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 import _ from 'lodash';
-import { getAccountInfo } from '../utils/eosio-client';
+//import { getAccountInfo } from '../utils/eosio-client';
+import { getAccountInfo } from '../utils/eosjs-client';
 import { Actions } from 'react-native-router-flux';
 
 import { 
@@ -40,11 +41,13 @@ export const accountsFetch = () => {
         if (!snapshot.val().hasOwnProperty(uid)) continue;
     
         var obj = snapshot.val()[uid];
-        let promise = getAccountInfo(obj.accountName, uid);
-            promise.then(resp => {
+        getAccountInfo(obj.accountName, uid)
+        .then(resp => {
+              //debugger;
+              console.log('resp', promise.uid);
               const payload = {
-                uid: resp.uid,
-                data: resp.response.data
+                uid: uid,
+                data: resp
               }
               dispatch({ type: GET_ACCOUNT_BC_DATA_SUCCESS, payload });
             });

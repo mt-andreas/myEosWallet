@@ -11,7 +11,7 @@ class ListAccounts extends Component {
     componentWillMount() {
         this.props.accountsFetch();
         get_info().then(info => {
-            console.log(info);
+            console.log("mc data",info);
           });
     }
 

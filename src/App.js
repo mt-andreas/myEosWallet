@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import Router from './router';
 import reducers from './reducers';
-import {get_info} from './utils/eosjs';
 
 class App extends Component {
     componentWillMount() {
@@ -19,13 +18,6 @@ class App extends Component {
           };
 
           firebase.initializeApp(config);
-          get_info().then(info => {
-            /*this.setState({
-              'head_block_producer': info['head_block_producer'],
-              'chain_id': info['chain_id']
-            })*/
-            console.log(info);
-          });
     }
 
 
